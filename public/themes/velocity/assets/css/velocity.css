@@ -2959,13 +2959,13 @@ body:after {
     margin: 0;
     padding: 0;
     font-size: 14px;
-    line-height: 2.5rem;
+    line-height: 2.0rem;
 }
 .footer .footer-content>.row .footer-ct-content>div ul {
     margin-bottom: 0;
 }
 .footer .footer-content>.row .footer-ct-content>div ul li {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 .footer .footer-content>.row .footer-ct-content>div ul li a {
     color: hsla(0, 0%, 100%, .83);
