@@ -3295,7 +3295,7 @@ body:after {
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #247959;
+    border: 1px solid #EC1A25;
     background-color: #26a37c!important;
 }
 .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination .quantity button.page-item, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination button.btn.page-item, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .quantity button.light, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.light.btn, .account-content .account-layout .bottom-toolbar .pagination .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.btn.page-item, .account-content .account-layout .bottom-toolbar .pagination .page-item, .account-content .account-layout .bottom-toolbar .pagination .quantity .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.page-item, .cart-details .light.continue-shopping-btn, .quantity .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination button.page-item, .quantity .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.light, .quantity .account-content .account-layout .bottom-toolbar .pagination .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.page-item, .theme-btn.light {
@@ -3309,12 +3309,12 @@ body:after {
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    border: 1px solid #247959;
+    border: 1px solid #EC1A25;
     background-color: #f5f5f5!important;
 }
 .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .quantity button:hover, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.btn:hover, .account-content .account-layout .bottom-toolbar .pagination .page-item:hover, .btn-add-to-cart:hover, .cart-details .continue-shopping-btn:hover, .quantity .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button:hover, .theme-btn:hover {
-    border-color: #247959!important;
-    background-color: #247959!important;
+    border-color: #EC1A25!important;
+    background-color: #EC1A25!important;
 }
 .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination .quantity button.page-item:hover, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination button.btn.page-item:hover, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .quantity button:hover.light, .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.btn:hover.light, .account-content .account-layout .bottom-toolbar .pagination .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.btn.page-item:hover, .account-content .account-layout .bottom-toolbar .pagination .btn-add-to-cart.page-item:hover, .account-content .account-layout .bottom-toolbar .pagination .page-item:hover, .account-content .account-layout .bottom-toolbar .pagination .quantity .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.page-item:hover, .btn-add-to-cart:hover.light, .cart-details .continue-shopping-btn:hover.light, .quantity .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container .bottom-toolbar .pagination button.page-item:hover, .quantity .account-content .account-layout .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button:hover.light, .quantity .account-content .account-layout .bottom-toolbar .pagination .account-table-content #datagrid-filters .dropdown-filters .dropdown-container button.page-item:hover, .theme-btn:hover.light {
     border: 1px solid rgba(0, 0, 0, .12)!important;
