@@ -68,7 +68,7 @@
                         <div class="">
                             <div class="row col-12 remove-padding-margin">
                                 <div class="container">
-                                    <div class="row">
+                                <div class="row">
                                 <sidebar-component
                                     main-sidebar=true
                                     id="sidebar-level-0"
@@ -76,6 +76,8 @@
                                     category-count="{{ $velocityMetaData ? $velocityMetaData->sidebar_category_count : 10 }}"
                                     add-class="category-list-container pt10">
                                 </sidebar-component>
+                                </div>
+                                </div>
 
                                 <div
                                     class="col-12 no-padding content" id="home-right-bar-container">
@@ -90,7 +92,6 @@
                                     </div>
 
                                 </div>
-                                </div></div>
                             </div>
                         </div>
                     </div>
