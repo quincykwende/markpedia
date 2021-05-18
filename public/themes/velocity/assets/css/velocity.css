@@ -1794,6 +1794,7 @@
     display: none;
     z-index: 100000;
     border-top: 1px solid #ccc;
+    margin-left: 15px;
 }
 .grouped-product-container .grouped-product-list ul li {
     width: 100%;
