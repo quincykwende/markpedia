@@ -67,6 +67,8 @@
 
                         <div class="">
                             <div class="row col-12 remove-padding-margin">
+                                <div class="container">
+                                    <div class="row">
                                 <sidebar-component
                                     main-sidebar=true
                                     id="sidebar-level-0"
@@ -88,6 +90,7 @@
                                     </div>
 
                                 </div>
+                                </div></div>
                             </div>
                         </div>
                     </div>
