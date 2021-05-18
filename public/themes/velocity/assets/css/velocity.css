@@ -1678,6 +1678,7 @@
     position: -webkit-sticky;
     position: sticky;
     background: #fff;
+    padding:10px 0;
 }
 .main-container-wrapper .sticky-header.header-shadow {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
@@ -2116,6 +2117,7 @@
     padding: 0!important;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
     box-shadow: 0 1px 3px rgba(0, 0, 0, .16), 0 1px 3px rgba(0, 0, 0, .23);
+    background-color:#233851;
 }
 .new-products-recent {
     top: -44px;
@@ -2686,7 +2688,7 @@ body .container-margin {
     cursor: not-allowed;
 }
 .main-content-wrapper .main-category {
-    padding: 8px 15px;
+    padding: 8px 15px 12px;
     border-top: 1px solid #ccc;
 }
 .main-content-wrapper .content-list {
@@ -2705,7 +2707,7 @@ body .container-margin {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    background-color: #EC1A25;
+    background-color: #233851;
 }
 .main-content-wrapper .content-list ul li a {
     display: block;
@@ -2728,6 +2730,7 @@ body .container-margin {
     z-index: 1;
     width: 230px;
     position: absolute;
+    background-color: #fff;
 }
 .velocity-divide-page .right {
     width: 100%;
@@ -5383,7 +5386,7 @@ header #search-form .btn-group select, header #search-form .quantity select {
     height: 100%;
     cursor: pointer;
     border-radius: 2px 0 0 2px;
-    border: 1px solid #EC1A25;
+    border: 1px solid #233851;
     border-right: 0;
     font-family: Source Sans Pro, sans-serif;
     -webkit-appearance: none;
@@ -5400,8 +5403,7 @@ header #search-form input {
     padding: 0 10px;
     line-height: 20px;
     letter-spacing: 0;
-    border: 1px solid #EC1A25;
-    border-left: 1px solid #ccc;
+    border: 1px solid #233851;
 }
 .quantity header #search-form button:hover, .quantity header #search-form input:hover, header #search-form .btn:hover, header #search-form .quantity button:hover, header #search-form .quantity input:hover {
     text-decoration: none;
