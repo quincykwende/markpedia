@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'default' => 'default',
+    'default' => 'velocity',
 
     'themes' => [
         'default' => [
