@@ -5855,6 +5855,7 @@ i.within-circle {
     font-size: 38px;
     margin-top: 5px;
     padding-right:5px;
+    color: #fff;
 }
 
 .header-menu .material-icons, .material-icons-outlined.x {
@@ -5897,4 +5898,11 @@ body {
 }
 #sidebar-level-0 {
     z-index: 100000;
+}
+header .left-wrapper .compare-btn span, header .left-wrapper .wishlist-btn span {
+    color: #fff;
+}
+.right.searchbar i.material-icons{
+    color:rgba(248,86,57,1) !important;
+    font-weight:normal;
 }
