@@ -5199,7 +5199,7 @@ body {
     margin: 0;
     min-height: 32px;
     color: rgba(0, 0, 0, .83);
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid rgba(238, 238, 238, 1);
 }
 #top .btn, #top .quantity button, #top .quantity input, .quantity #top button, .quantity #top input {
     font-family: Source Sans Pro, sans-serif;
@@ -5364,7 +5364,6 @@ header .logo {
 header #search-form {
     height: 40px;
     margin: 5px 0;
-    background: #fff;
 }
 header #search-form * {
     height: 100%}
@@ -5838,4 +5837,64 @@ i.within-circle {
 }
 .row:after, .row:before {
     display: none!important;
+}
+.header-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: rgba(35, 56, 81, 1)!important;
+    font-size: 17px !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top:5px;
+    padding-bottom:7px;
+}
+
+.header-menu .material-icons, .material-icons-outlined {
+    font-size: 38px;
+    margin-top: 5px;
+    padding-right:5px;
+}
+
+.header-menu .material-icons, .material-icons-outlined.x {
+    color:rgb(6, 30, 187) !important;
+    font-weight:normal;
+}
+.header-menu .material-icons, .material-icons-outlined.y {
+    color:rgba(78,177,66,1) !important;
+    font-weight:normal;
+}
+.header-menu .material-icons, .material-icons-outlined.z {
+    color:rgba(248,86,57,1) !important;
+    font-weight:normal;
+}
+.header-menu p span
+{
+    color:rgba(109, 118, 125, 1);
+    font-size:15px;
+}
+.header-menu p {
+    margin-bottom:0px;
+}
+.input-group {
+    margin-left:10px !important;
+    padding:5px;
+}
+body {
+    background: rgba(255,255,255,1);
+    font-family: 'Overpass';
+    font-weight: 400;
+    font-size: 16px;
+    color: rgba(35,56,81,1);
+    -webkit-font-smoothing: antialiased;
+}
+.main-content-wrapper .main-category {
+    margin-top: 9px;
+    padding: 6px 15px 11px;
+    border-radius: 2px;
+    z-index: 100000;
+}
+#sidebar-level-0 {
+    z-index: 100000;
 }

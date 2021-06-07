@@ -5,7 +5,7 @@
             <div class="container">
             <div class="vc-small-screen container">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <div v-if="hamburger" class="nav-container scrollable">
                             <div class="wrapper" v-if="this.rootCategories">
                                 <div class="greeting drawer-section fw6">
@@ -335,12 +335,16 @@
                         <logo-component></logo-component>
                     </div>
 
+                    <div class="col-4">
+                        <search-component></search-component>
+                    </div>
+
                     @php
                         $showCompare = core()->getConfigData('general.content.shop.compare_option') == "1" ? true : false;
                         $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
                     @endphp
 
-                    <div class="right-vc-header col-6">
+                    <div class="right-vc-header col-4">
                         @if ($showCompare)
                             <a
                                 class="compare-btn unset"
@@ -400,18 +404,9 @@
                 </span>
             </div>
 
-            <div class="content-list right">
-                <ul type="none" class="no-margin">
-                    <li v-for="(content, index) in headerContent" :key="index">
-                        <a
-                            v-text="content.title"
-                            :href="`${$root.baseUrl}/${content['page_link']}`"
-                            v-if="(content['content_type'] == 'link' || content['content_type'] == 'category')"
-                            :target="content['link_target'] ? '_blank' : '_self'">
-                        </a>
-                    </li>
-                </ul>
-            </div>
+           
+            <searchbar-component></searchbar-component>
+                   
             </div>
         </header>
     
