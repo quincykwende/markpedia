@@ -5897,7 +5897,7 @@ body {
     z-index: 100000;
 }
 #sidebar-level-0 {
-    z-index: 100000;
+    margin-top:-12px;
 }
 header .left-wrapper .compare-btn span, header .left-wrapper .wishlist-btn span {
     color: #fff;
@@ -5919,9 +5919,12 @@ header .left-wrapper {
 .mini-cart-content .material-icons-outlined {
     font-size: 24px;
 }
-.mini-cart-content  .down-arrow-container {
+.down-arrow-container span.rango-arrow-down {
     color:#fff;
 }
 .vc-header {
     z-index: 0;
+}
+.mini-cart-content .material-icons-outlined.text-down-3 {
+    top:0;
 }
