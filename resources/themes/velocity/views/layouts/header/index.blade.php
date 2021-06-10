@@ -5,7 +5,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-12">
                         <a href="{{ url('/') }}" aria-label="Logo" class="left navbar-brand">
-                            <img src="{{ url('/') }}/themes/velocity/assets/images/logo-text.png"  class="logo">
+                            <img src="{{ url('/') }}/themes/velocity/assets/images/logo-text2.png"  class="logo">
                         </a>
                     </div>
                     <div class="col-lg-9 col-md-12">
