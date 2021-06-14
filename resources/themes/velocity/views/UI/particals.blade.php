@@ -64,8 +64,8 @@
     <script type="text/x-template" id="searchbar-template">
         <div class="right searchbar">
             <div class="row">
-                <div class="col-lg-5 col-md-12">
-                    <div class="input-group">
+                <div class="col-lg-7 col-md-12">
+                    <div class="input-group search-group-p">
                         <form
                             method="GET"
                             role="search"
@@ -124,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-7 col-md-12 vc-full-screen">
+                <div class="col-lg-5 col-md-12 vc-full-screen">
                     <div class="left-wrapper">
                         @php
                             $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
