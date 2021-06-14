@@ -1,29 +1,3 @@
-{
-    "name": "Bagisto PWA App",
-    "short_name": "Bagisto",
-    "start_url": "http://localhost",
-    "display": "standalone",
-    "orientation": "any",
-    "theme_color": "#0041ff",
-    "background_color": "#0041ff",
-    "icons": [
-        {
-            "src": "vendor/webkul/pwa/assets/images/48x48.png",
-            "sizes": "48x48",
-            "type": "image/png"
-        }, {
-            "src": "vendor/webkul/pwa/assets/images/96x96.png",
-            "sizes": "96x96",
-            "type": "image/png"
-        }, {
-            "src": "vendor/webkul/pwa/assets/images/144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        }, {
-            "src": "vendor/webkul/pwa/assets/images/196x196.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        }
-    ],
-    "gcm_sender_id": "103953800507"
-}
+
+{"name":"Markpedia","short_name":"Markpedia","start_url":"http:\/\/107.22.138.38","display":"standalone","orientation":"any","theme_color":"#EC1A25","background_color":"#ffffff","icons":[{"src":"http:\/\/107.22.138.38\/storage\/configuration\/vj50y4zhqd4PSrU2SqMw7RJSoZFsPySzl0K16JaW.png","sizes":"48x48","type":"image\/png"},{"src":"http:\/\/107.22.138.38\/storage\/configuration\/b0GeyWCJy36uJebmc6FhdTS976Rt81AmW2YNli7V.png","sizes":"96x96","type":"image\/png"},{"src":"http:\/\/107.22.138.38\/storage\/configuration\/dZQ3pJCuh5QvPcMeOkHR80T5MejI6IARr8CLJnYL.png","sizes":"144x144","type":"image\/png"},{"src":"http:\/\/107.22.138.38\/storage\/configuration\/9QLfPqIDLI1PDiAFyASqN0QOYEyQNwwGAWKA8Ud1.png","sizes":"196x196","type":"image\/png"}]}
+
