@@ -5450,9 +5450,9 @@ header .left-wrapper {
 }
 header .left-wrapper .compare-btn, header .left-wrapper .wishlist-btn {
     height: 50px;
-    font-size: 18px;
-    font-weight: 600;
-    padding: 10px 16px 6px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 9px 6px;
 }
 header .left-wrapper .compare-btn i, header .left-wrapper .wishlist-btn i {
     margin-right: 5px;
@@ -5901,12 +5901,19 @@ body {
 #sidebar-level-0 {
     margin-top:-12px;
 }
-header .left-wrapper .compare-btn span, header .left-wrapper .wishlist-btn span {
+header .left-wrapper .compare-btn span, header .left-wrapper .wishlist-btn span,
+header .left-wrapper .wishlist-btn p,  header .left-wrapper .compare-btn p{
     color: #fff;
+}
+header .left-wrapper .compare-btn p, header .left-wrapper .wishlist-btn p{
+    padding-left:4px;
+    margin-bottom:0px;
+    padding:0p;
 }
 .right.searchbar i.material-icons{
     color:rgba(221, 221, 221, 1) !important;
     font-weight:normal;
+    font-size:28px;
 }
 .header-menu .material-icons, .material-icons-outlined{
     color:rgba(221, 221, 221, 1);

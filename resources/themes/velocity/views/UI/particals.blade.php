@@ -134,18 +134,21 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
                             @if($showWishlist)
+                            <div class="float-left" style="margin:10px 20px 0">
                                 <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
                                     <i class="material-icons">favorite_border</i>
                                     <div class="badge-container" v-if="wishlistCount > 0">
                                         <span class="badge" v-text="wishlistCount"></span>
                                     </div>
-                                    <span>{{ __('shop::app.layouts.wishlist') }}</span>
+                                    <p>{{ __('shop::app.layouts.wishlist') }}</p>
                                 </a>
+                            </div>
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.after') !!}
 
                         {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
                             @if ($showCompare)
+                                <div class="float-left" style="margin:10px 20px 0">
                                 <a
                                     class="compare-btn unset"
                                     @auth('customer')
@@ -161,13 +164,16 @@
                                     <div class="badge-container" v-if="compareCount > 0">
                                         <span class="badge" v-text="compareCount"></span>
                                     </div>
-                                    <span>{{ __('velocity::app.customer.compare.text') }}</span>
+                                    <p>{{ __('velocity::app.customer.compare.text') }}</p>
                                 </a>
+                                </div>
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
 
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
-                            @include('shop::checkout.cart.mini-cart')
+                            
+                                @include('shop::checkout.cart.mini-cart')
+                            
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
                     </div>
                 </div>
