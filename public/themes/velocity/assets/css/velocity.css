@@ -2683,7 +2683,7 @@ body .container-margin {
 }
 .main-content-wrapper {
     margin: 0;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     display: inline-block;
 }
 .main-content-wrapper>.row.disabled {
@@ -5327,7 +5327,7 @@ body {
     color: #fff;
 }
 .no-padding, .product-detail .right h3 {
-    padding: 0 0 8px !important;
+    padding: 0 0 10px !important;
 }
 .btn-normal {
     background: #21a179;
@@ -5935,6 +5935,6 @@ header .left-wrapper {
     display:block;
     margin-left:50px!important;
 }
-.no-padding, .product-detail .right {
+#home-right-bar-container{
     background-color:rgba(238,238,238,1) !important;
 }

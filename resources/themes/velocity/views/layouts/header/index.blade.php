@@ -31,8 +31,8 @@
                                     </div>
                                     <div class="media-body">
                                         <p>
-                                            Free Shipping<br />
-                                            <span>Delivery Information</span>
+                                           Express Delivery<br />
+                                            <span>To Cameroon</span>
                                         </p>
                                     </div>
                                 </div>
