@@ -5945,3 +5945,6 @@ header .left-wrapper {
 #home-right-bar-container{
     background-color:rgba(238,238,238,1) !important;
 }
+.fs18.fw6.cart-text {
+    display:block
+}
