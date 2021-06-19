@@ -409,7 +409,7 @@
                    
             </div>
         </header>
-    
+        <div style="clear:both"></div>
     </script>
 @endpush
 

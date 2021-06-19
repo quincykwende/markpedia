@@ -42,7 +42,7 @@
         <div id="app">
             <product-quick-view v-if="$root.quickView"></product-quick-view>
 
-            <div class="main-container-wrapper">
+            <div class="main-container-wrapper" id="home-page">
 
                 @section('body-header')
                     @include('shop::layouts.top-nav.index')

@@ -50,10 +50,18 @@
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="float-right">
+            {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
+                            
+                 @include('shop::checkout.cart.mini-cart')
+                            
+             {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
+</div>
             <!--
                 <searchbar-component></searchbar-component>
             -->

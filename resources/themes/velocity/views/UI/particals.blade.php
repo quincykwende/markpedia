@@ -44,7 +44,9 @@
     </script>
 @endpush
 
+<div>
 @include('velocity::UI.header')
+</div>
 
 @push('scripts')
     <script type="text/x-template" id="logo-template">
@@ -64,7 +66,7 @@
     <script type="text/x-template" id="searchbar-template">
         <div class="right searchbar">
             <div class="row">
-                <div class="col-lg-7 col-md-12">
+                <div class="col-lg-8 col-md-12">
                     <div class="input-group search-group-p">
                         <form
                             method="GET"
@@ -124,7 +126,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-12 vc-full-screen">
+                <div class="col-lg-3 col-md-12 vc-full-screen">
                     <div class="left-wrapper">
                         @php
                             $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
@@ -134,7 +136,7 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
                             @if($showWishlist)
-                            <div class="float-left" style="margin:10px 20px 0">
+                            <div class="float-left" style="margin:8px 25px -12px">
                                 <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
                                     <i class="material-icons">favorite_border</i>
                                     <div class="badge-container" v-if="wishlistCount > 0">
@@ -148,7 +150,7 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
                             @if ($showCompare)
-                                <div class="float-left" style="margin:10px 20px 0">
+                                <div class="float-left" style="margin:8px 25px -12px">
                                 <a
                                     class="compare-btn unset"
                                     @auth('customer')
@@ -170,13 +172,12 @@
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
 
-                        {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
-                            
-                                @include('shop::checkout.cart.mini-cart')
-                            
-                        {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
+                        
                     </div>
+                    
                 </div>
+                <div class="col-lg-1 col-md-12 vc-full-screen">
+                
             </div>
         </div>
     </script>
