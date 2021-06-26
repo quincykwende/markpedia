@@ -1680,7 +1680,8 @@
     position: -webkit-sticky;
     position: sticky;
     background: #fff;
-    padding:10px 0;
+    width:100%;
+    padding: 10px 0;
 }
 .main-container-wrapper .sticky-header.header-shadow {
     -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
@@ -3068,7 +3069,7 @@ body:after {
     font-weight: 500;
 }
 .fw6, .product-detail .right .info .price, .product-detail .right h3, .product-detail .right h4 {
-    font-weight: 600;
+    font-weight: 500;
 }
 .fw7, .product-detail .right .info h2 {
     font-weight: 700;
@@ -3092,7 +3093,7 @@ body:after {
     font-size: 17px;
 }
 .fs18, .product-detail .right h3 {
-    font-size: 18px;
+    font-size: 13px;
 }
 .fs19 {
     font-size: 19px;
@@ -5360,12 +5361,12 @@ body {
     border-color: #f05153;
 }
 header .logo {
-    height: 40px;
+    height: 35px;
     padding-left: 10px;
 }
 header #search-form {
     height: 40px;
-    margin: 5px 0;
+    margin: 6px 0;
 }
 header #search-form * {
     height: 100%}
@@ -5424,10 +5425,8 @@ header #search-form #header-search-icon i {
 }
 header .mini-cart-container {
     height: 50px;
-    padding-top: 14px;
-    display: inline;
-    position:absolute;
-    margin-left:-85px;
+    padding: 8px 17px;
+    display: inline-block;
 }
 header .mini-cart-container #mini-cart .mini-cart-content {
     font-size: 16px;
@@ -5445,10 +5444,6 @@ header .mini-cart-container #mini-cart .mini-cart-content i+span.cart-text {
 }
 header .mini-cart-container #mini-cart .mini-cart-content .cart-text {
     padding-left: 0px;
-    margin-left: -5px;
-    font-size: 14px!important;
-    font-weight: 500;
-    margin-top: -6px;
 }
 header .mini-cart-container #mini-cart .mini-cart-content+.down-arrow-container .rango-arrow-down {
     top: 8px;
@@ -5855,13 +5850,11 @@ i.within-circle {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    padding-top:5px;
-    padding-bottom:7px;
 }
 
 .header-menu .material-icons, .material-icons-outlined {
-    font-size: 38px;
-    margin-top: 5px;
+    font-size: 30px;
+    margin-top: 2px;
     padding-right:5px;
     color: #fff;
 }
@@ -5881,10 +5874,11 @@ i.within-circle {
 .header-menu p span
 {
     color:rgba(109, 118, 125, 1);
-    font-size:15px;
+    font-size:13px;
 }
 .header-menu p {
     margin-bottom:0px;
+    line-height:16px;
 }
 .input-group {
     margin-left:10px !important;
@@ -5895,46 +5889,43 @@ body {
     font-family: 'Overpass';
     font-weight: 400;
     font-size: 16px;
-    color: rgba(35,56,81,1);
+    color: rgb(171, 171, 172);
     -webkit-font-smoothing: antialiased;
 }
-.main-content-wrapper .main-category {
-    margin-top: 10px;
+.main-container-wrapper .main-category {
+    margin-top: 12px;
     padding: 8px 15px 11px;
     border-radius: 2px;
     z-index: 100000;
     background-color:#EC1A25;
-    color:#FFF;
+    color:#fff;
 }
 #sidebar-level-0 {
-    margin-top:-12px;
+    margin-top:-31px;
 }
 header .left-wrapper .compare-btn span, header .left-wrapper .wishlist-btn span,
 header .left-wrapper .wishlist-btn p,  header .left-wrapper .compare-btn p{
-    color: #fff;
+    color: rgba(221, 221, 221, 1);
 }
 header .left-wrapper .compare-btn p, header .left-wrapper .wishlist-btn p{
     padding-left:4px;
     margin-bottom:0px;
     padding:0p;
+    margin-top:-3px;
 }
 .right.searchbar i.material-icons{
     color:rgba(221, 221, 221, 1) !important;
     font-weight:normal;
-    font-size:28px;
 }
 .header-menu .material-icons, .material-icons-outlined{
     color:rgba(221, 221, 221, 1);
 }
 
 header .mini-cart-container #mini-cart .mini-cart-content {
-    color:#fff;
-}
-header .left-wrapper {
-    
+    color:rgba(221, 221, 221, 1);
 }
 .mini-cart-content .material-icons-outlined {
-    font-size: 24px;
+    font-size: 21px;
 }
 .down-arrow-container span.rango-arrow-down {
     color:#fff;
@@ -5955,5 +5946,12 @@ header .left-wrapper {
     z-index: 0important;
 }
 .fs18.fw6.cart-text {
-    display:block
+    display:block;
+    margin-top:-9px;
+}
+.navbar-brand {
+    padding-top:0px;
+}
+.padding-left-50{
+    padding-left:50px;
 }

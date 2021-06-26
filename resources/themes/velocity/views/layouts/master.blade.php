@@ -53,8 +53,7 @@
 
                     {!! view_render_event('bagisto.shop.layout.header.after') !!}
 
-                    <div class="main-content-wrapper col-12 no-padding">
-                        @php
+                    @php
                             $velocityContent = app('Webkul\Velocity\Repositories\ContentRepository')->getAllContents();
                         @endphp
 
@@ -64,6 +63,9 @@
                             heading= "{{ __('velocity::app.menu-navbar.text-category') }}"
                             category-count="{{ $velocityMetaData ? $velocityMetaData->sidebar_category_count : 10 }}"
                         ></content-header>
+
+                    <div class="main-content-wrapper col-12 no-padding">
+                        
 
                         <div class="">
                             <div class="row col-12 remove-padding-margin">

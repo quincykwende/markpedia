@@ -10,22 +10,10 @@
                     </div>
                     <div class="col-lg-9 col-md-12">
                         <div class="row">
-                            <div class="col-md-3"></div>
+                            <div class="col-md-6"></div>
+                            
                             <div class="col-md-3">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <span class="material-icons-outlined x">perm_phone_msg</span>
-                                    </div>
-                                    <div class="media-body">
-                                        <p>
-                                            +8613360045990 <br />
-                                            <span>Call us anytime</span>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="media">
+                                <div class="media padding-left-50">
                                     <div class="media-left">
                                         <span class="material-icons-outlined y">local_shipping</span>
                                     </div>
@@ -40,7 +28,7 @@
                             <div class="col-md-3">
                                 <div class="media">
                                     <div class="media-left">
-                                    <span class="material-icons-outlined z">contact_support</span>
+                                    <span class="material-icons-outlined z">mail_outline</span>
                                     </div>
                                     <div class="media-body">
                                         <p>
@@ -55,13 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="float-right">
-            {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
-                            
-                 @include('shop::checkout.cart.mini-cart')
-                            
-             {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
-</div>
+           
             <!--
                 <searchbar-component></searchbar-component>
             -->
