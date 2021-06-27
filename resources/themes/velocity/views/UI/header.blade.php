@@ -1,6 +1,6 @@
 @push('scripts')
     <script type="text/x-template" id="content-header-template">
-        <div class="non-sticky-header">
+        <div class="sticky-header">
             <header class="row velocity-divide-page vc-header header-shadow active">
                 <div class="container">
                 <div class="vc-small-screen container">

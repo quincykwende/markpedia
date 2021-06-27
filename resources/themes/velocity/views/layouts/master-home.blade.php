@@ -64,7 +64,7 @@
                             category-count="{{ $velocityMetaData ? $velocityMetaData->sidebar_category_count : 10 }}"
                         ></content-header>
 
-                    <div class="main-content-wrapper col-12 no-padding" style="margin-top:-30px;">
+                    <div class="main-content-wrapper col-12 no-padding">
                         
 
                         <div class="">

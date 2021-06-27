@@ -43,7 +43,6 @@
                     </div>
                 </div>
             </div>
-           
             <!--
                 <searchbar-component></searchbar-component>
             -->

@@ -172,18 +172,19 @@
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
 
-                       
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
-                                        
+                            
                             @include('shop::checkout.cart.mini-cart')
                                         
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
-
 
                         
                     </div>
                     
                 </div>
+                <div class="col-lg-1 col-md-12 vc-full-screen">
+                
+            </div>
         </div>
     </script>
 
