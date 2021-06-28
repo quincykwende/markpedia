@@ -8,3 +8,11 @@
         check-minimum-order-url="{{ route('shop.checkout.check-minimum-order') }}">
     </mini-cart>
 </div>
+
+
+<!--<div class="new-mini-cart-container">
+    <span class="new-mini-cart-container">
+        <p class="cart-text">0 item(s) - {{ __('shop::app.minicart.checkout') }}</p>
+        <p class="material-icons-outlined">shopping_cart</p>
+    </span>
+</div>-->

@@ -7,12 +7,11 @@
             :class="`btn btn-link disable-box-shadow ${itemCount == 0 ? 'cursor-not-allowed' : ''}`">
 
             <div class="mini-cart-content">
-                <i class="material-icons-outlined text-down-3">shopping_cart</i>
+                <span>
+                    <p class="mleft">{{ __('velocity::app.minicart.cart') }}</p> 
+                    <p class="mright"><i class="material-icons-outlined text-down-3">shopping_cart</i></p>
+                </span>
                 <span class="badge" v-text="itemCount" v-if="itemCount != 0"></span>
-                <span class="fs18 fw6 cart-text">{{ __('velocity::app.minicart.cart') }}</span>
-            </div>
-            <div class="down-arrow-container">
-                <span class="rango-arrow-down"></span>
             </div>
         </button>
     </script>
@@ -66,7 +65,7 @@
     <script type="text/x-template" id="searchbar-template">
         <div class="right searchbar">
             <div class="row">
-                <div class="col-lg-8 col-md-12">
+                <div class="col-lg-7 col-md-12">
                     <div class="input-group search-group-p">
                         <form
                             method="GET"
@@ -126,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-12 vc-full-screen">
+                <div class="col-lg-5 col-md-12 vc-full-screen">
                     <div class="left-wrapper">
                         @php
                             $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
