@@ -10,10 +10,10 @@
                     </div>
                     <div class="col-lg-9 col-md-12">
                         <div class="row">
-                            <div class="col-md-6"></div>
+                            <div class="col-md-7"></div>
                             
-                            <div class="col-md-3">
-                                <div class="media padding-left-50">
+                            <div class="col-md-2">
+                                <div class="media padding-left-82">
                                     <div class="media-left">
                                         <span class="material-icons-outlined y">local_shipping</span>
                                     </div>
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="col-md-3">
-                                <div class="media">
+                                <div class="media padding-left-33">
                                     <div class="media-left">
                                     <span class="material-icons-outlined z">mail_outline</span>
                                     </div>

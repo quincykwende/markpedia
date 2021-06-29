@@ -5423,7 +5423,7 @@ header #search-form #header-search-icon i {
 }
 header .mini-cart-container {
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 11px;
     border-radius: 2px;
 }
 header .mini-cart-container #mini-cart .mini-cart-content {
@@ -5942,6 +5942,7 @@ header .left-wrapper {
 
 .input-group.search-group-p {
     display:block;
+    padding-left:40px!important;
 }
 #home-page #home-right-bar-container{
     background-color:rgba(238,238,238,1) !important;
@@ -5950,8 +5951,11 @@ header .left-wrapper {
 .fs18.fw6.cart-text {
     display:block
 }
-.padding-left-50 {
-    padding-left: 50px;
+.padding-left-82 {
+    padding-left: 48px;
+}
+.padding-left-33 {
+    padding-left: 60px;
 }
 .navbar-brand {
     padding-top: 0px;
@@ -5993,7 +5997,7 @@ header span.new-mini-cart-container {
 .mini-cart-content .mleft {
     float:left;
     margin-bottom:0;
-    min-width:130px;
+    width:130px;
     margin-top: 4px;
     font-size: 16px;
 }

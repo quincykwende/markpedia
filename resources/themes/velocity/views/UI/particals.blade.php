@@ -135,7 +135,7 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
                             @if($showWishlist)
-                            <div class="float-left" style="margin:11px 25px -12px">
+                            <div class="float-left" style="margin:11px 7px -12px">
                                 <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
                                     <i class="material-icons">favorite_border</i>
                                     <div class="badge-container" v-if="wishlistCount > 0">
@@ -149,7 +149,7 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
                             @if ($showCompare)
-                                <div class="float-left" style="margin:11px 25px -12px">
+                                <div class="float-left" style="margin:11px 39px -12px 25px">
                                 <a
                                     class="compare-btn unset"
                                     @auth('customer')
