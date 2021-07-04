@@ -22,11 +22,17 @@
         </div>
 
         <div class="shipping-methods col-12">
+            <div style="display:none">
             @foreach(\Webkul\Shipping\Facades\Shipping::getShippingMethods() as $method)
                 <div class="method-sticker">
                     {{ $method['method_title'] }}
                 </div>
             @endforeach
+            </div>
+            <div class="shipping-method-text">
+                By Air：Ethiopia Airline, Kenya AirLine<br />
+                By Sea
+            </div>
         </div>
     </div>
 </div>

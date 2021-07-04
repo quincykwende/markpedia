@@ -2975,6 +2975,11 @@ body:after {
 .footer .footer-content>.row .footer-ct-content>div ul li a {
     color: hsla(0, 0%, 100%, .83);
 }
+.shipping-method-text {
+    font-size:14px!important;
+    color: hsla(0, 0%, 100%, .83);
+    margin-top: -7px;
+}
 .footer .footer-content>.row .footer-rt-content {
     padding-right: 0;
 }
