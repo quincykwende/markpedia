@@ -2927,7 +2927,7 @@ body:after {
 }
 .footer .footer-content .newsletter-subscription .newsletter-wrapper .social-icons {
     height: 100%;
-    padding: 20px 0;
+    padding: 10px 0;
     color: #fff;
 }
 .footer .footer-content .newsletter-subscription .newsletter-wrapper .social-icons i {
@@ -2950,10 +2950,10 @@ body:after {
 }
 .footer .footer-content .newsletter-subscription .newsletter-wrapper .subscribe-newsletter {
     text-align: right;
-    padding: 25px 0 30px;
+    padding: 10px 0 10px;
 }
 .footer .footer-content>.row {
-    padding: 60px 130px;
+    padding: 15px 130px;
     background: #30383f;
 }
 .footer .footer-content>.row .logo {
