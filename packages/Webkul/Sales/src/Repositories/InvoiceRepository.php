@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\DB;
 use Webkul\Core\Eloquent\Repository;
 use Webkul\Sales\Contracts\Invoice;
-
+use Webkul\Marketplace\Repositories\OrderRepository as SellerOrderRepository;
+use Webkul\Marketplace\Repositories\SellerRepository;
+use Webkul\Marketplace\Repositories\ProductRepository as MpProductRepository;
 class InvoiceRepository extends Repository
 {
     /**
@@ -16,6 +18,28 @@ class InvoiceRepository extends Repository
      * @var \Webkul\Sales\Repositories\OrderRepository
      */
     protected $orderRepository;
+
+     /**
+     * SellerRepository object
+     *
+     * @var mixed
+     */
+    protected $sellerRepository;
+
+
+    /**
+     * MpProductRepository object
+     *
+     * @var mixed
+     */
+    protected $mpProductRepository;
+
+    /**
+     * SellerOrderRepository object
+     *
+     * @var \Webkul\Marketplace\Repositories\OrderRepository as SellerOrderRepository
+     */
+    protected $sellerOrderRepository;
 
     /**
      * OrderItemRepository object
@@ -52,6 +76,9 @@ class InvoiceRepository extends Repository
         OrderItemRepository $orderItemRepository,
         InvoiceItemRepository $invoiceItemRepository,
         DownloadableLinkPurchasedRepository $downloadableLinkPurchasedRepository,
+        SellerOrderRepository $sellerOrderRepository,
+        SellerRepository $sellerRepository,
+        MpProductRepository $mpProductRepository,
         App $app
     )
     {
@@ -64,6 +91,12 @@ class InvoiceRepository extends Repository
         $this->invoiceItemRepository = $invoiceItemRepository;
 
         $this->downloadableLinkPurchasedRepository = $downloadableLinkPurchasedRepository;
+
+        $this->sellerOrderRepository = $sellerOrderRepository;
+
+        $this->sellerRepository = $sellerRepository;
+
+        $this->mpProductRepository = $mpProductRepository;
 
         parent::__construct($app);
     }
@@ -85,7 +118,10 @@ class InvoiceRepository extends Repository
      */
     public function create(array $data)
     {
+
         DB::beginTransaction();
+
+
 
         try {
             Event::dispatch('sales.invoice.save.before', $data);
@@ -215,6 +251,7 @@ class InvoiceRepository extends Repository
      */
     public function collectTotals($invoice)
     {
+
         $invoice->sub_total = $invoice->base_sub_total = 0;
         $invoice->tax_amount = $invoice->base_tax_amount = 0;
         $invoice->discount_amount = $invoice->base_discount_amount = 0;
@@ -233,13 +270,54 @@ class InvoiceRepository extends Repository
         $invoice->shipping_amount = $invoice->order->shipping_amount;
         $invoice->base_shipping_amount = $invoice->order->base_shipping_amount;
 
+        $mpProduct = $this->mpProductRepository->findOneWhere(['product_id' => $invoiceItem->product_id, 'price' => $invoiceItem->price]);
+
+        $seller = null;
+
+        if ($mpProduct) {
+            $seller = $mpProduct->seller;
+        }
+
+        if($seller) {
+
+            $shipping = $this->sellerOrderRepository->where('order_id',$invoice->order->id)
+            ->where('marketplace_seller_id',$seller->id)
+            ->first();
+
+            if($shipping->shipping_amount) {
+
+                $invoice->shipping_amount = $shipping->shipping_amount;
+                $invoice->base_shipping_amount = $shipping->shipping_amount;
+
+            }
+
+        }
+
         $invoice->discount_amount += $invoice->order->shipping_discount_amount;
         $invoice->base_discount_amount += $invoice->order->base_shipping_discount_amount;
 
         if ($invoice->order->shipping_amount) {
+
             foreach ($invoice->order->invoices as $prevInvoice) {
+
                 if ((float) $prevInvoice->shipping_amount) {
-                    $invoice->shipping_amount = $invoice->base_shipping_amount = 0;
+
+                    if($seller) {
+
+                        $shipping = $this->sellerOrderRepository->where('order_id',$invoice->order->id)
+                        ->where('marketplace_seller_id',$seller->id)
+                        ->first();
+
+                        if($shipping->shipping_amount) {
+
+                            $invoice->shipping_amount = $shipping->shipping_amount;
+
+                        }
+
+                    } else {
+                        $invoice->shipping_amount = $invoice->base_shipping_amount = 0;
+                    }
+
                 }
 
                 if ($prevInvoice->id != $invoice->id) {

@@ -118,7 +118,7 @@ return [
     | (use capital letters!)
     */
 
-    'default_country' => "CM",
+    'default_country' => "EN",
 
     /*
     |--------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````@inject ('reviewHelper', 'Webkul\Product\Helpers\Review')
+@inject ('reviewHelper', 'Webkul\Product\Helpers\Review')
 
 @extends('shop::layouts.master')
 
@@ -16,12 +16,6 @@
             width: unset;
             float: right;
         }
-
-        .alert-wishlist {
-            display: inline-block;
-            position: relative;
-            top: -2px;
-        }
     </style>
 @endpush
 
@@ -31,7 +25,8 @@
     <script type="text/x-template" id="cart-template">
         <div class="container">
             <section class="cart-details row no-margin col-12">
-                
+                <h1 class="fw6 col-12">{{ __('shop::app.checkout.cart.title') }}</h1>
+
                 @if ($cart)
                     <div class="cart-details-header col-lg-6 col-md-12">
                         <div class="row cart-header col-12 no-padding">
@@ -88,7 +83,7 @@
                                                     :onerror="`this.src='${this.$root.baseUrl}/vendor/webkul/ui/assets/images/product/large-product-placeholder.png'`">
                                             </a>
 
-                                            <div class="product-details-content col-6 pr0">
+                                            <div class="product-details-content col-7 pr0">
                                                 <div class="row item-title no-margin">
                                                     <a
                                                         href="{{ route('shop.productOrCategory.index', $url_key) }}"
@@ -98,6 +93,8 @@
                                                         <span class="fs20 fw6 link-color">{{ $product->name }}</span>
                                                     </a>
                                                 </div>
+
+                                                {!! view_render_event('bagisto.shop.checkout.cart.item.name.after', ['item' => $product]) !!}
 
                                                 @if (isset($item->additional['attributes']))
                                                     @foreach ($item->additional['attributes'] as $attribute)
@@ -113,56 +110,51 @@
                                                 @endif
 
                                                 <div class="row col-12 no-padding no-margin">
-                                                    <div class="product-price">
-                                                        <span>{{ core()->currency($item->base_price) }}</span>
-                                                    </div>
+                                                    @include ('shop::products.price', ['product' => $product])
                                                 </div>
 
                                                 @php
                                                     $moveToWishlist = trans('shop::app.checkout.cart.move-to-wishlist');
-
-                                                    $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
                                                 @endphp
 
                                                 <div class="no-padding col-12 cursor-pointer fs16">
                                                     @auth('customer')
-                                                        @if ($showWishlist)
-                                                            @if ($item->parent_id != 'null' ||$item->parent_id != null)
-                                                                <div @click="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')" class="alert-wishlist">
-                                                                    @include('shop::products.wishlist', [
-                                                                        'route' => route('shop.movetowishlist', $item->id),
-                                                                        'text' => "<span class='align-vertical-super'>$moveToWishlist</span>"
-                                                                    ])
-                                                                </div>
-                                                            @else
-                                                                <div @click="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')" class="alert-wishlist">
-                                                                    @include('shop::products.wishlist', [
-                                                                        'route' => route('shop.movetowishlist', $item->child->id),
-                                                                        'text' => "<span class='align-vertical-super'>$moveToWishlist</span>"
-                                                                    ])
-                                                                </div>
-                                                            @endif
+                                                        @if ($item->parent_id != 'null' ||$item->parent_id != null)
+                                                            @include('shop::products.wishlist', [
+                                                                'route' => route('shop.movetowishlist', $item->id),
+                                                                'text' => "<span class='align-vertical-super'>$moveToWishlist</span>"
+                                                            ])
+                                                        @else
+                                                            @include('shop::products.wishlist', [
+                                                                'route' => route('shop.movetowishlist', $item->child->id),
+                                                                'text' => "<span class='align-vertical-super'>$moveToWishlist</span>"
+                                                            ])
                                                         @endif
                                                     @endauth
 
-                                                    <div class="d-inline-block">
-                                                        <a
-                                                            class="unset
-                                                                @auth('customer')
-                                                                    ml10
-                                                                @endauth
-                                                            "
-                                                            href="{{ route('shop.checkout.cart.remove', ['id' => $item->id]) }}"
-                                                            @click="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')">
+                                                    @guest('customer')
+                                                        @include('shop::products.wishlist', [
+                                                            'isMoveToWishlist' => route('shop.checkout.cart.remove', ['id' => $item->id]),
+                                                            'text' => "<span class='align-vertical-top'>$moveToWishlist</span>"
+                                                        ])
+                                                    @endguest
 
-                                                            <span class="rango-delete fs24"></span>
-                                                            <span class="align-vertical-super">{{ __('shop::app.checkout.cart.remove') }}</span>
-                                                        </a>
-                                                    </div>
+                                                    <a
+                                                        class="unset
+                                                            @auth('customer')
+                                                                ml10
+                                                            @endauth
+                                                        "
+                                                        href="{{ route('shop.checkout.cart.remove', ['id' => $item->id]) }}"
+                                                        @click="removeLink('{{ __('shop::app.checkout.cart.cart-remove-action') }}')">
+
+                                                        <span class="rango-delete fs24"></span>
+                                                        <span class="align-vertical-top">{{ __('shop::app.checkout.cart.remove') }}</span>
+                                                    </a>
                                                 </div>
                                             </div>
 
-                                            <div class="product-quantity col-3 no-padding">
+                                            <div class="product-quantity col-2 no-padding">
                                                 <quantity-changer
                                                     :control-name="'qty[{{$item->id}}]'"
                                                     quantity="{{ $item->quantity }}">
@@ -202,6 +194,8 @@
 
                                                     <span class="fs20 fw6 link-color">{{ $product->name }}</span>
                                                 </a>
+
+                                                {!! view_render_event('bagisto.shop.checkout.cart.item.name.after', ['item' => $product]) !!}
 
                                                 @if (isset($item->additional['attributes']))
                                                     <div class="row col-12 no-padding no-margin">
@@ -307,4 +301,4 @@
             })
         })()
     </script>
-@endpush```````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````````
+@endpush

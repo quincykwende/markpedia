@@ -1,68 +1,101 @@
-<div class="customer-sidebar row no-margin no-padding">
-    <div class="account-details col-12">
-        <div class="customer-name col-12 text-uppercase">
-            {{ substr(auth('customer')->user()->first_name, 0, 1) }}
-        </div>
-        <div class="col-12 customer-name-text text-capitalize text-break">{{ auth('customer')->user()->first_name . ' ' . auth('customer')->user()->last_name}}</div>
-        <div class="customer-email col-12 text-break">{{ auth('customer')->user()->email }}</div>
-    </div>
+<div class="sidebar left">
+    <?php
+        $customer = auth('customer')->user();
+    ?>
 
-    @foreach ($menu->items as $menuItem)
-        <ul type="none" class="navigation">
-            {{-- rearrange menu items --}}
-            @php
-                $subMenuCollection = [];
+    @if ( isset($customer->id))
+        <div class="customer-sidebar row no-margin no-padding">
+            <div class="account-details col-12">
+                <div class="customer-name col-12 text-uppercase">
+                    {{ substr(auth('customer')->user()->first_name, 0, 1) }}
+                </div>
 
-                $showCompare = core()->getConfigData('general.content.shop.compare_option') == "1" ? true : false;
+                <div class="col-12 customer-name-text text-capitalize text-break">{{ auth('customer')->user()->first_name . ' ' . auth('customer')->user()->last_name}}</div>
+                <div class="customer-email col-12 text-break">{{ auth('customer')->user()->email }}</div>
+            </div>
 
-                $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
+            @foreach ($menu->items as $menuItem)
+                @if ($menuItem['key'] == "marketplace")
+                    @if (core()->getConfigData('marketplace.settings.general.status'))
+                        <div class="menu-block-title">
+                            {{ trans($menuItem['name']) }}
+                        </div>
+                    @endif
+                @else
+                    <div class="menu-block-title">
+                        {{ core()->getConfigData('marketplace.settings.general.status') == "1" ? trans($menuItem['name']) : '' }}
+                    </div>
+                @endif
 
-                try {
-                    $subMenuCollection['profile'] = $menuItem['children']['profile'];
-                    $subMenuCollection['orders'] = $menuItem['children']['orders'];
-                    $subMenuCollection['downloadables'] = $menuItem['children']['downloadables'];
+                <ul type="none" class="navigation">
 
-                    if ($showWishlist) {
-                        $subMenuCollection['wishlist'] = $menuItem['children']['wishlist'];
-                    }
+                    @if ($menuItem['key'] != 'marketplace')
+                        @foreach ($menuItem['children'] as $index => $subMenuItem)
+                            @if ($index == 'compare')
+                                @if (core()->getConfigData('general.content.shop.compare_option'))
+                                <li class="{{ $menu->getActive($subMenuItem) }}">
+                                    <a class="unset fw6 full-width" href="{{ $subMenuItem['url'] }}">
+                                        <i class="icon {{ $index }} text-down-3"></i>
+                                        <span>{{ trans($subMenuItem['name']) }}</span>
+                                        <i class="rango-arrow-right pull-right text-down-3"></i>
+                                    </a>
+                                </li>
+                                @endif
+                            @else
+                            <li class="{{ $menu->getActive($subMenuItem) }}">
+                                <a class="unset fw6 full-width" href="{{ $subMenuItem['url'] }}">
+                                    <i class="icon {{ $index }} text-down-3"></i>
+                                    <span>{{ trans($subMenuItem['name']) }}</span>
+                                    <i class="rango-arrow-right pull-right text-down-3"></i>
+                                </a>
+                            </li>
+                            @endif
+                        @endforeach
+                    @else
+                    @if (core()->getConfigData('marketplace.settings.general.status'))
+                        @if (app('Webkul\Marketplace\Repositories\SellerRepository')->isSeller(auth()->guard('customer')->user()->id))
 
-                    if ($showCompare) {
-                        $subMenuCollection['compare'] = $menuItem['children']['compare'];
-                    }
+                            @foreach ($menuItem['children'] as $index => $subMenuItem)
+                            @if ($index == 'compare')
+                                    @if (core()->getConfigData('general.content.shop.compare_option'))
+                                        <li class="{{ $menu->getActive($subMenuItem) }}">
+                                            <a class="unset fw6 full-width" href="{{ $subMenuItem['url'] }}">
+                                                <i class="icon {{ $index }} text-down-3"></i>
+                                                <span>{{ trans($subMenuItem['name']) }}</span>
+                                                <i class="rango-arrow-right pull-right text-down-3"></i>
+                                            </a>
+                                        </li>
+                                    @endif
+                              @else
+                                <li class="{{ $menu->getActive($subMenuItem) }}">
+                                    <a class="unset fw6 full-width" href="{{ $subMenuItem['url'] }}">
+                                        <i class="icon {{ $index }} text-down-3"></i>
+                                        <span>{{ trans($subMenuItem['name']) }}</span>
+                                        <i class="rango-arrow-right pull-right text-down-3"></i>
+                                    </a>
+                                </li>
+                                @endif
+                            @endforeach
 
-                    $subMenuCollection['reviews'] = $menuItem['children']['reviews'];
-                    $subMenuCollection['address'] = $menuItem['children']['address'];
+                        @else
 
-                    unset(
-                        $menuItem['children']['profile'],
-                        $menuItem['children']['orders'],
-                        $menuItem['children']['downloadables'],
-                        $menuItem['children']['wishlist'],
-                        $menuItem['children']['compare'],
-                        $menuItem['children']['reviews'],
-                        $menuItem['children']['address']
-                    );
+                            <li class="menu-item {{ request()->route()->getName() == 'marketplace.account.seller.create' ? 'active' : '' }}">
+                                <a class="unset fw6 full-width" href="{{ route('marketplace.account.seller.create') }}">
+                                    {{ __('marketplace::app.shop.layouts.become-seller') }}
 
-                    foreach ($menuItem['children'] as $key => $remainingChildren) {
-                        $subMenuCollection[$key] = $remainingChildren;
-                    }
-                } catch (\Exception $exception) {
-                    $subMenuCollection = $menuItem['children'];
-                }
-            @endphp
+                                    <i class="rango-arrow-right pull-right text-down-3"></i>
+                                </a>
+                            </li>
 
-            @foreach ($subMenuCollection as $index => $subMenuItem)
-                <li class="{{ $menu->getActive($subMenuItem) }}" title="{{ trans($subMenuItem['name']) }}">
-                    <a class="unset fw6 full-width" href="{{ $subMenuItem['url'] }}">
-                        <i class="icon {{ $index }} text-down-3"></i>
-                        <span>{{ trans($subMenuItem['name']) }}<span>
-                        <i class="rango-arrow-right float-right text-down-3"></i>
-                    </a>
-                </li>
+                        @endif
+                    @endif
+                 @endif
+                </ul>
             @endforeach
-        </ul>
-    @endforeach
+        </div>
+    @endif
 </div>
+
 
 @push('css')
     <style type="text/css">
