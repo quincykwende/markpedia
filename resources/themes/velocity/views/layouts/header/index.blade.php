@@ -1,4 +1,4 @@
-<header class="sticky-header">
+<header class="non-sticky-header">
     <div class="row remove-padding-margin velocity-divide-page">
         <div class="container" style="padding-left:0;padding-right: 0px;">
             <div class="header-menu pull-right">
