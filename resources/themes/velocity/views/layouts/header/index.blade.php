@@ -1,7 +1,52 @@
-<header class="sticky-header">
+<header class="non-sticky-header">
     <div class="row remove-padding-margin velocity-divide-page">
-        <logo-component add-class="navbar-brand"></logo-component>
-        <searchbar-component></searchbar-component>
+        <div class="container" style="padding-left:0;padding-right: 0px;">
+            <div class="header-menu pull-right">
+                <div class="row">
+                    <div class="col-lg-3 col-md-12">
+                        <a href="{{ url('/') }}" aria-label="Logo" class="left navbar-brand">
+                            <img src="{{ url('/') }}/themes/velocity/assets/images/logo-text2.png"  class="logo">
+                        </a>
+                    </div>
+                    <div class="col-lg-9 col-md-12">
+                        <div class="row">
+                            <div class="col-md-7"></div>
+                            
+                            <div class="col-md-2">
+                                <div class="media padding-left-82">
+                                    <div class="media-left">
+                                        <span class="material-icons-outlined y">local_shipping</span>
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                           Express Delivery<br />
+                                            <span>To Cameroon</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="media padding-left-33">
+                                    <div class="media-left">
+                                    <span class="material-icons-outlined z">mail_outline</span>
+                                    </div>
+                                    <div class="media-body">
+                                        <p>
+                                            Contact<br />
+                                            <span>Leave us a message</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--
+                <searchbar-component></searchbar-component>
+            -->
+        </div>
     </div>
 </header>
 
