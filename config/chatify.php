@@ -7,7 +7,7 @@ return [
     | Messenger display name
     |-------------------------------------
     */
-    'name' => env('CHATIFY_NAME', 'Markpedia Messenger'),
+    'name' => env('CHATIFY_NAME', 'Chatify Messenger'),
 
     /*
     |-------------------------------------

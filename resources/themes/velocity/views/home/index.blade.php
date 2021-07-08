@@ -1,4 +1,4 @@
-@extends('shop::layouts.master-home')
+@extends('shop::layouts.master')
 
 @inject ('productRatingHelper', 'Webkul\Product\Helpers\Review')
 

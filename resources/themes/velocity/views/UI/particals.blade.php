@@ -7,11 +7,12 @@
             :class="`btn btn-link disable-box-shadow ${itemCount == 0 ? 'cursor-not-allowed' : ''}`">
 
             <div class="mini-cart-content">
-                <span>
-                    <p class="mleft">{{ __('velocity::app.minicart.cart') }}</p> 
-                    <p class="mright"><i class="material-icons-outlined text-down-3">shopping_cart</i></p>
-                </span>
+                <i class="material-icons-outlined text-down-3">shopping_cart</i>
                 <span class="badge" v-text="itemCount" v-if="itemCount != 0"></span>
+                <span class="fs18 fw6 cart-text">{{ __('velocity::app.minicart.cart') }}</span>
+            </div>
+            <div class="down-arrow-container">
+                <span class="rango-arrow-down"></span>
             </div>
         </button>
     </script>
@@ -43,9 +44,7 @@
     </script>
 @endpush
 
-<div>
 @include('velocity::UI.header')
-</div>
 
 @push('scripts')
     <script type="text/x-template" id="logo-template">
@@ -65,8 +64,8 @@
     <script type="text/x-template" id="searchbar-template">
         <div class="right searchbar">
             <div class="row">
-                <div class="col-lg-7 col-md-12">
-                    <div class="input-group search-group-p">
+                <div class="col-lg-5 col-md-12">
+                    <div class="input-group">
                         <form
                             method="GET"
                             role="search"
@@ -125,7 +124,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-12 vc-full-screen">
+                <div class="col-lg-7 col-md-12 vc-full-screen">
                     <div class="left-wrapper">
                         @php
                             $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
@@ -135,21 +134,18 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
                             @if($showWishlist)
-                            <div class="float-left" style="margin:11px 7px -12px">
                                 <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
                                     <i class="material-icons">favorite_border</i>
                                     <div class="badge-container" v-if="wishlistCount > 0">
                                         <span class="badge" v-text="wishlistCount"></span>
                                     </div>
-                                    <p>{{ __('shop::app.layouts.wishlist') }}</p>
+                                    <span>{{ __('shop::app.layouts.wishlist') }}</span>
                                 </a>
-                            </div>
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.after') !!}
 
                         {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
                             @if ($showCompare)
-                                <div class="float-left" style="margin:11px 39px -12px 25px">
                                 <a
                                     class="compare-btn unset"
                                     @auth('customer')
@@ -165,24 +161,16 @@
                                     <div class="badge-container" v-if="compareCount > 0">
                                         <span class="badge" v-text="compareCount"></span>
                                     </div>
-                                    <p>{{ __('velocity::app.customer.compare.text') }}</p>
+                                    <span>{{ __('velocity::app.customer.compare.text') }}</span>
                                 </a>
-                                </div>
                             @endif
                         {!! view_render_event('bagisto.shop.layout.header.compare.after') !!}
 
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.before') !!}
-                            
                             @include('shop::checkout.cart.mini-cart')
-                                        
                         {!! view_render_event('bagisto.shop.layout.header.cart-item.after') !!}
-
-                        
                     </div>
-                    
                 </div>
-                <div class="col-lg-1 col-md-12 vc-full-screen">
-                
             </div>
         </div>
     </script>

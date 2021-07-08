@@ -8,7 +8,6 @@
 
 @push('scripts')
     <script type="text/x-template" id="slider-template">
-        <div class="container">
         <div class="slides-container {{ $direction }}">
             <carousel-component
                 loop="true"
@@ -49,7 +48,6 @@
                 @endif
 
             </carousel-component>
-        </div>
         </div>
     </script>
 

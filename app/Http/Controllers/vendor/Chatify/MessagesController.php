@@ -5,10 +5,10 @@ namespace Chatify\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Response;
-use App\ChMessage as Message;
-use App\ChFavorite as Favorite;
+use App\Models\ChMessage as Message;
+use App\Models\ChFavorite as Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Request as FacadesRequest;
 use Illuminate\Support\Str;
@@ -51,8 +51,6 @@ class MessagesController extends Controller
      */
     public function index( $id = null)
     {
-        dd($id)
-        
         $routeName= FacadesRequest::route()->getName();
         $route = (in_array($routeName, ['user', config('chatify.routes.prefix')]))
             ? 'user'
