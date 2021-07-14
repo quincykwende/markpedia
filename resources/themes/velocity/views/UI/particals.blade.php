@@ -65,7 +65,7 @@
     <script type="text/x-template" id="searchbar-template">
         <div class="right searchbar">
             <div class="row">
-                <div class="col-lg-7 col-md-12">
+                <div class="col-lg-8 col-md-12">
                     <div class="input-group search-group-p">
                         <form
                             method="GET"
@@ -125,7 +125,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 col-md-12 vc-full-screen">
+                <div class="col-lg-4 col-md-12 vc-full-screen" style="margin-left:-10px">
                     <div class="left-wrapper">
                         @php
                             $showWishlist = core()->getConfigData('general.content.shop.wishlist_option') == "1" ? true : false;
@@ -133,15 +133,24 @@
                             $showCompare = core()->getConfigData('general.content.shop.compare_option') == "1" ? true : false;
                         @endphp
 
+                            <div class="float-left" style="margin:7px 5px -13px 0px">
+                                <a href="{{ route('customer.session.index') }}"
+                                    class="compare-btn unset"
+                                    >
+                                    <i class="material-icons-outlined">account_circle</i>
+                                    <p class="top-icon-p">{{ __('shop::app.header.title') }}</p>
+                                </a>
+                            </div>
+
                         {!! view_render_event('bagisto.shop.layout.header.wishlist.before') !!}
                             @if($showWishlist)
-                            <div class="float-left" style="margin:11px 7px -12px">
+                            <div class="float-left" style="margin:7px 11px -13px">
                                 <a class="wishlist-btn unset" :href="`{{ route('customer.wishlist.index') }}`">
-                                    <i class="material-icons">favorite_border</i>
+                                    <i class="material-icons-outlined">favorite_border</i>
                                     <div class="badge-container" v-if="wishlistCount > 0">
                                         <span class="badge" v-text="wishlistCount"></span>
                                     </div>
-                                    <p>{{ __('shop::app.layouts.wishlist') }}</p>
+                                    <p class="top-icon-p">{{ __('shop::app.layouts.wishlist') }}</p>
                                 </a>
                             </div>
                             @endif
@@ -149,7 +158,7 @@
 
                         {!! view_render_event('bagisto.shop.layout.header.compare.before') !!}
                             @if ($showCompare)
-                                <div class="float-left" style="margin:11px 39px -12px 25px">
+                                <div class="float-left" style="margin:9px 23px -13px 0px">
                                 <a
                                     class="compare-btn unset"
                                     @auth('customer')
@@ -161,11 +170,11 @@
                                     @endguest
                                     >
 
-                                    <i class="material-icons">compare_arrows</i>
+                                    <i class="material-icons-outlined trans">swap_vertical_circle</i>
                                     <div class="badge-container" v-if="compareCount > 0">
                                         <span class="badge" v-text="compareCount"></span>
                                     </div>
-                                    <p>{{ __('velocity::app.customer.compare.text') }}</p>
+                                    <p class="top-icon-p trans">{{ __('velocity::app.customer.compare.text') }}</p>
                                 </a>
                                 </div>
                             @endif
@@ -181,9 +190,6 @@
                     </div>
                     
                 </div>
-                <div class="col-lg-1 col-md-12 vc-full-screen">
-                
-            </div>
         </div>
     </script>
 
