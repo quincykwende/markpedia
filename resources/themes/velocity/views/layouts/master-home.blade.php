@@ -117,6 +117,7 @@
         </div>
 
         {{-- footer --}}
+        
         @section('footer')
             {!! view_render_event('bagisto.shop.layout.footer.before') !!}
 
