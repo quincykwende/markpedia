@@ -283,7 +283,10 @@ return [
         Webkul\DebugBar\Providers\DebugBarServiceProvider::class,
         Webkul\Marketing\Providers\MarketingServiceProvider::class,
 
-        Webkul\Marketplace\Providers\MarketplaceServiceProvider::class
+        Webkul\Marketplace\Providers\MarketplaceServiceProvider::class,
+        quincykwende\Shipping\Providers\ShippingServiceProvider::class,
+        quincykwende\ShippingByAir\Providers\ShippingByAirServiceProvider::class,
+        quincykwende\ShippingBySea\Providers\ShippingBySeaServiceProvider::class,
     ],
 
     /*
