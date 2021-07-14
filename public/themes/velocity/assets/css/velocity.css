@@ -6040,3 +6040,9 @@ h2.title {
 .cms-page-container .mb-5 {
     font-size:16px;
 }
+.mt-5.mb-5.report-section {
+    border: solid 1px #e8e8e8;
+    box-shadow: 0px 1px 5px rgb(0 0 0 / 10%);
+    margin-top: 0 !important;
+    margin-bottom: 0 !important
+}
