@@ -4,7 +4,7 @@
     <link href="{{ asset('themes/velocity/assets/css/bootstrap-flipped.css') }}" rel="stylesheet">
 @endif
 
-<link rel="stylesheet" href="{{ asset('themes/velocity/assets/css/velocity.css?v=1.0') }}" />
+<link rel="stylesheet" href="{{ asset('themes/velocity/assets/css/velocity.css?v=1.01') }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 
@@ -13,7 +13,7 @@
         width: 100%;
         padding-bottom: 40px
     }
-    .brands_slider_container {
+    .brands_slider_container { 
         height: 130px;
         border: solid 1px #e8e8e8;
         box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
