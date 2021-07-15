@@ -2873,3 +2873,6 @@ div.dataTables_wrapper div.dataTables_info {
 .pagination .angle-left-icon:before {
     content: "\E907";
 }
+#main-category .text-down-4 {
+    top:0;
+}
