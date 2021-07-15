@@ -3360,6 +3360,7 @@ body:after {
     -ms-user-select: none;
     -o-user-select: none;
     user-select: none;
+    font-weight:500;
 }
 .card-arrow-container .card-arrow {
     z-index: 10;
@@ -6066,4 +6067,7 @@ nav .dropdown {
 }
 nav ul {
     display: inline;
+}
+#main-category .text-down-4 {
+    top:0!important;
 }
