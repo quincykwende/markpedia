@@ -6064,3 +6064,6 @@ nav .dropdown {
 .align-vertical-top {
     vertical-align: text-bottom !important;
 }
+nav ul {
+    display: inline;
+}

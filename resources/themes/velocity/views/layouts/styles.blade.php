@@ -4,7 +4,7 @@
     <link href="{{ asset('themes/velocity/assets/css/bootstrap-flipped.css') }}" rel="stylesheet">
 @endif
 
-<link rel="stylesheet" href="{{ asset('themes/velocity/assets/css/velocity.css?v=1.02') }}" />
+<link rel="stylesheet" href="{{ asset('themes/velocity/assets/css/velocity.css?v=1.03') }}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
 
